@@ -27,3 +27,17 @@ export const fetch = async (req, res) => {
         res.status(500).json({ error: "Internal Server Error." });
     }
 };
+
+export const update = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const mentorExist = await Mentor.findById({ _id: id });
+        if (!mentorExist) {
+            return res.status(404).json({ message: "Mentor not found." });
+        }
+        const updatedMentor = await Mentor.findByIdAndUpdate(id, req.body, { new: true });
+        res.status(201).json(updatedMentor);
+    } catch (error) {
+        res.status(500).json({ error: "Internal Server Error." });
+    }
+};
