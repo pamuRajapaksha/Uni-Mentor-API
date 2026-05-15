@@ -41,3 +41,17 @@ export const update = async (req, res) => {
         res.status(500).json({ error: "Internal Server Error." });
     }
 };
+
+export const deleteMentor = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const mentorExist = await Mentor.findById({ _id: id });
+        if (!mentorExist) {
+            return res.status(404).json({ message: "Mentor not found." });
+        }
+        await Mentor.findByIdAndDelete(id);
+        res.status(201).json({ message: "Mentor deleted successfully." });
+    } catch (error) {
+        res.status(500).json({ error: "Internal Server Error." });
+    }
+};
