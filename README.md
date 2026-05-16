@@ -77,6 +77,7 @@ All mentor resources share the following JSON shape:
 ---
 
 ### POST `/api/mentor/create`
+![API Endpoints](./screenshots/create.png)
 
 Creates a new mentor profile.
 
@@ -117,6 +118,7 @@ Creates a new mentor profile.
 ---
 
 ### GET `/api/mentor/getall`
+![API Endpoints](./screenshots/get.png)
 
 Returns all registered mentors.
 
@@ -158,6 +160,7 @@ Returns all registered mentors.
 ---
 
 ### PUT `/api/mentor/update/:id`
+![API Endpoints](./screenshots/put.png)
 
 Updates an existing mentor. Replace `:id` with the mentor's MongoDB `_id`.
 
@@ -197,6 +200,7 @@ Updates an existing mentor. Replace `:id` with the mentor's MongoDB `_id`.
 ---
 
 ### DELETE `/api/mentor/delete/:id`
+![API Endpoints](./screenshots/delete1.png)
 
 Deletes a mentor by MongoDB `_id`.
 
@@ -360,6 +364,11 @@ What Vibe Coding added in practice:
 The frontend is a **bonus demonstration layer** for examiners and peers; the API remains fully testable and gradable on its own via **Postman**.
 
 ---
+## Another screenshots
+![API FRONTEND](./screenshots/create1.png)
+![API FRONTEND](./screenshots/get1.png)
+![API FRONTEND](./screenshots/delete.png)
+
 
 ## Author & Repository
 
